@@ -1671,6 +1671,16 @@ section {
 }
 .form-success.show { display: block; animation: fadeUp 0.5s var(--ease); }
 
+.form-error {
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  border-radius: var(--radius-md);
+  color: #FF8B8B;
+  font-size: 14px;
+}
+
 .form-success svg {
   width: 64px; height: 64px;
   color: var(--color-primary);

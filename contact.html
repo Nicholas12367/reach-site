@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact, Reach Screens</title>
   <meta name="description" content="Get in touch with Reach Screens. Tell us about your business and we'll reach out within 48 hours.">
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=10">
   <link rel="icon" href="assets/favicon.ico">
 </head>
 <body>
@@ -37,7 +37,8 @@
     <div class="contact-grid">
       <!-- Form -->
       <div class="reveal-left">
-        <form data-contact-form>
+        <form data-contact-form data-endpoint="https://forms-api.reachscreens.ca/submit">
+          <input type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
           <div class="form-toggle" role="tablist" aria-label="Inquiry type">
             <button type="button" class="form-toggle-btn active" data-inquiry="advertise" role="tab" aria-selected="true">I want to advertise</button>
             <button type="button" class="form-toggle-btn" data-inquiry="host" role="tab" aria-selected="false">I want to host a screen</button>
@@ -101,6 +102,7 @@
             Send Message
             <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"/></svg>
           </button>
+          <div data-form-error class="form-error" style="display:none;"></div>
         </form>
 
         <div class="form-success">
@@ -204,6 +206,6 @@
 </footer>
 
 <script src="assets/screen-locations.js?v=3"></script>
-<script src="main.js?v=9"></script>
+<script src="main.js?v=10"></script>
 </body>
 </html>

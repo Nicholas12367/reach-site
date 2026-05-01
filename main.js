@@ -365,18 +365,60 @@
       updateCounter();
     }
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
+      const originalLabel = btn ? btn.innerHTML : '';
       if (btn) {
         btn.disabled = true;
         btn.innerHTML = '<span>Sending...</span>';
       }
-      setTimeout(() => {
+
+      const payload = {
+        _hp: form.querySelector('input[name="_hp"]')?.value || '',
+        type: inquiryHidden?.value || 'advertise',
+        name: form.querySelector('#name')?.value || '',
+        business: form.querySelector('#business')?.value || '',
+        email: form.querySelector('#email')?.value || '',
+        phone: form.querySelector('#phone')?.value || '',
+        package: packageSelect?.value || '',
+        locations: locHidden?.value || '',
+        venue: form.querySelector('#venue')?.value || '',
+        address: form.querySelector('#address')?.value || '',
+        message: form.querySelector('#message')?.value || '',
+      };
+
+      const endpoint = form.dataset.endpoint || '/submit';
+      let ok = false;
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+        ok = res.ok && data.ok === true;
+      } catch (err) {
+        ok = false;
+      }
+
+      if (ok) {
         form.style.display = 'none';
         const success = document.querySelector('.form-success');
         if (success) success.classList.add('show');
-      }, 900);
+      } else {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = originalLabel;
+        }
+        const errBox = form.querySelector('[data-form-error]');
+        if (errBox) {
+          errBox.textContent = "Couldn't send your message. Please try again or email info@reachscreens.ca directly.";
+          errBox.style.display = 'block';
+        } else {
+          alert("Couldn't send your message. Please try again or email info@reachscreens.ca directly.");
+        }
+      }
     });
   }
 
