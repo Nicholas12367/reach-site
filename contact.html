@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact, Reach Screens</title>
+  <meta name="description" content="Get in touch with Reach Screens. Tell us about your business and we'll reach out within 48 hours.">
+  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logo-white.png" alt="Reach Screens" class="nav-logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="host.html">Host a Screen</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section style="padding-top: 160px;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">Contact Us</span>
+      <h1 style="margin-bottom: var(--space-3);">Let's <span class="text-gradient">Talk</span></h1>
+      <p class="section-sub">Tell us about your business. Whether you want to advertise, host a screen, or just have a question, we'll get back to you within 48 hours.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Form -->
+      <div class="reveal-left">
+        <form data-contact-form>
+          <div class="form-toggle" role="tablist" aria-label="Inquiry type">
+            <button type="button" class="form-toggle-btn active" data-inquiry="advertise" role="tab" aria-selected="true">I want to advertise</button>
+            <button type="button" class="form-toggle-btn" data-inquiry="host" role="tab" aria-selected="false">I want to host a screen</button>
+          </div>
+          <input type="hidden" id="inquiryType" value="advertise">
+
+          <div class="form-group">
+            <input type="text" id="name" class="form-input" placeholder=" " required>
+            <label for="name" class="form-label">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="business" class="form-input" placeholder=" " required>
+            <label for="business" class="form-label">Business Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" class="form-input" placeholder=" " required>
+            <label for="email" class="form-label">Email</label>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="phone" class="form-input" placeholder=" " required>
+            <label for="phone" class="form-label">Phone</label>
+          </div>
+
+          <div class="form-group" data-advertise-only>
+            <select id="package" class="form-input form-select">
+              <option value="">No specific package, just exploring</option>
+              <option value="local-presence">Local Presence — $249/mo</option>
+              <option value="lloyd-network">Lloyd Network — $499/mo</option>
+              <option value="category-authority">Category Authority — $799/mo</option>
+              <option value="city-takeover">City Takeover — $1,299/mo</option>
+            </select>
+            <label for="package" class="form-label form-label-static">Package You're Interested In</label>
+          </div>
+
+          <div class="form-group" data-advertise-only>
+            <button type="button" class="form-locations-toggle" aria-expanded="false">
+              <span>Select your locations <span class="form-locations-counter">(optional)</span></span>
+              <svg class="form-locations-chev" width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.4a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/></svg>
+            </button>
+            <div class="form-locations-panel" hidden>
+              <input type="search" class="form-locations-search" placeholder="Search locations…" aria-label="Search locations">
+              <div class="form-locations-list" role="group" aria-label="Locations"></div>
+            </div>
+            <input type="hidden" id="locations" value="">
+          </div>
+
+          <div class="form-group" data-host-only style="display:none;">
+            <input type="text" id="venue" class="form-input" placeholder=" ">
+            <label for="venue" class="form-label">Type of business / venue</label>
+          </div>
+          <div class="form-group" data-host-only style="display:none;">
+            <input type="text" id="address" class="form-input" placeholder=" ">
+            <label for="address" class="form-label">Business address</label>
+          </div>
+
+          <div class="form-group">
+            <textarea id="message" class="form-textarea" placeholder=" " required></textarea>
+            <label for="message" class="form-label" data-message-label>Tell us what you're looking for</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-pulse" style="width:100%; justify-content:center;">
+            Send Message
+            <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"/></svg>
+          </button>
+        </form>
+
+        <div class="form-success">
+          <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="26" cy="26" r="24"/>
+            <polyline class="check-path" points="14 27 23 36 38 18"/>
+          </svg>
+          <h3 class="mt-3">Message Sent!</h3>
+          <p class="mt-3">We got it. One of us will reach out within 48 hours. In the meantime, check out our <a href="pricing.html" style="color: var(--color-primary);">pricing</a>.</p>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="reveal-right">
+        <div class="contact-info">
+          <h3>Reach Us Directly</h3>
+
+          <div class="contact-info-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <div>
+              <div class="label">Phone</div>
+              <div class="value"><a href="tel:3065143752" style="color: inherit;">306-514-3752</a></div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div>
+              <div class="label">Email</div>
+              <div class="value"><a href="mailto:info@reachscreens.ca" style="color: inherit;">info@reachscreens.ca</a></div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <div class="label">Mailing Address</div>
+              <div class="value">P.O. Box 11238<br>Lloydminster, AB T9V 3B5</div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <div class="label">Response Time</div>
+              <div class="value">Within 48 hours</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info mt-4">
+          <h3>Quick Links</h3>
+          <ul style="list-style: none;">
+            <li style="padding: 8px 0;"><a href="pricing.html" style="color: var(--color-primary); font-weight: 500;">→ See Pricing Packages</a></li>
+            <li style="padding: 8px 0;"><a href="how-it-works.html" style="color: var(--color-primary); font-weight: 500;">→ Read How It Works</a></li>
+            <li style="padding: 8px 0;"><a href="host.html" style="color: var(--color-primary); font-weight: 500;">→ Host a Screen</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo-white.png" alt="Reach Screens" class="footer-logo-img">
+        <p class="footer-tagline">Local digital advertising that puts your business where your customers already look, across 35+ screens in Lloydminster.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="host.html">Host a Screen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:3065143752">306-514-3752</a></li>
+          <li><a href="mailto:info@reachscreens.ca">info@reachscreens.ca</a></li>
+          <li style="color: var(--color-text-dim); font-size:14px; padding-top: 6px;">P.O. Box 11238<br>Lloydminster, AB T9V 3B5</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Reach Screens. All rights reserved.</div>
+      <div>Made in Lloydminster, AB 🇨🇦</div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/screen-locations.js?v=3"></script>
+<script src="main.js?v=8"></script>
+</body>
+</html>

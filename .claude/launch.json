@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "reachscreens",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["/Users/nicholasconnelly/Applications/reachscreens-website/.claude/serve.sh"],
+      "port": 8090,
+      "autoPort": true
+    }
+  ]
+}

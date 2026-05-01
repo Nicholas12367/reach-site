@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Locations, Reach Screens</title>
+  <meta name="description" content="Every venue in the Reach Screens network across Lloydminster. 35 screens in 33 locations.">
+  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logo-white.png" alt="Reach Screens" class="nav-logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="host.html">Host a Screen</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section style="padding-top: 160px;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">Our Network</span>
+      <h1 style="margin-bottom: var(--space-3);">All <span class="text-gradient">35 Screens</span> Across Lloydminster</h1>
+      <p class="section-sub">Every venue in the Reach Screens network. This is where your ad shows up.</p>
+    </div>
+
+    <div class="locations-list reveal" id="locationsList"></div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="contact.html?type=advertise" class="btn btn-primary btn-lg btn-pulse">
+        Pick locations on the contact form
+        <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo-white.png" alt="Reach Screens" class="footer-logo-img">
+        <p class="footer-tagline">Local digital advertising that puts your business where your customers already look, across 35+ screens in Lloydminster.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="host.html">Host a Screen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:3065143752">306-514-3752</a></li>
+          <li><a href="mailto:info@reachscreens.ca">info@reachscreens.ca</a></li>
+          <li style="color: var(--color-text-dim); font-size:14px; padding-top: 6px;">P.O. Box 11238<br>Lloydminster, AB T9V 3B5</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Reach Screens. All rights reserved.</div>
+      <div>Made in Lloydminster, AB 🇨🇦</div>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js?v=8"></script>
+<script src="assets/screen-locations.js?v=3"></script>
+<script>
+  (function () {
+    var list = document.getElementById('locationsList');
+    if (!list || !Array.isArray(window.screenLocations)) return;
+    var html = window.screenLocations.map(function (loc, i) {
+      var screensBadge = (loc.screens && loc.screens > 1)
+        ? '<span class="location-row-screens">' + loc.screens + ' screens</span>'
+        : '';
+      return ''
+        + '<div class="location-row">'
+        +   '<div class="location-row-num">' + String(i + 1).padStart(2, '0') + '</div>'
+        +   '<div class="location-row-body">'
+        +     '<div class="location-row-name">' + loc.name + screensBadge + '</div>'
+        +     '<div class="location-row-addr">' + loc.address + '</div>'
+        +   '</div>'
+        + '</div>';
+    }).join('');
+    list.innerHTML = html;
+  })();
+</script>
+</body>
+</html>
