@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact, Reach Screens</title>
   <meta name="description" content="Get in touch with Reach Screens. Tell us about your business and we'll reach out within 48 hours.">
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
   <link rel="icon" href="assets/favicon.ico">
 </head>
 <body>
@@ -19,19 +19,19 @@
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="host.html">Host a Screen</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+      <li><a href="contact.html#idea" class="nav-cta">Submit Your Idea</a></li>
     </ul>
-    <a href="contact.html" class="nav-mobile-cta">Get Started</a>
+    <a href="contact.html#idea" class="nav-mobile-cta">Submit Your Idea</a>
     <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<section style="padding-top: 160px;">
+<section id="idea" style="padding-top: 160px;">
   <div class="container">
     <div class="section-head reveal">
       <span class="section-label">Contact Us</span>
-      <h1 style="margin-bottom: var(--space-3);">Let's <span class="text-gradient">Talk</span></h1>
-      <p class="section-sub">Tell us about your business. Whether you want to advertise, host a screen, or just have a question, we'll get back to you within 48 hours.</p>
+      <h1 style="margin-bottom: var(--space-3);">Tell Us Your <span class="text-gradient">Idea</span></h1>
+      <p class="section-sub">What do you want to promote, who are you trying to reach, and when? Send it over and we'll come back with a plan within 48 hours.</p>
     </div>
 
     <div class="contact-grid">
@@ -40,10 +40,15 @@
         <form data-contact-form data-endpoint="https://forms-api.reachscreens.ca/submit">
           <input type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
           <div class="form-toggle" role="tablist" aria-label="Inquiry type">
-            <button type="button" class="form-toggle-btn active" data-inquiry="advertise" role="tab" aria-selected="true">I want to advertise</button>
+            <button type="button" class="form-toggle-btn active" data-inquiry="advertise" role="tab" aria-selected="true">I have an idea to promote</button>
             <button type="button" class="form-toggle-btn" data-inquiry="host" role="tab" aria-selected="false">I want to host a screen</button>
           </div>
           <input type="hidden" id="inquiryType" value="advertise">
+
+          <div class="form-group">
+            <textarea id="message" class="form-textarea" placeholder="e.g., Promote our grand opening on June 14, drive in-store traffic, run for 4 weeks" required></textarea>
+            <label for="message" class="form-label form-label-static" data-message-label>What's your idea?</label>
+          </div>
 
           <div class="form-group">
             <input type="text" id="name" class="form-input" placeholder=" " required>
@@ -62,9 +67,18 @@
             <label for="phone" class="form-label">Phone</label>
           </div>
 
+          <div class="form-group" data-host-only style="display:none;">
+            <input type="text" id="venue" class="form-input" placeholder=" ">
+            <label for="venue" class="form-label">Type of business / venue</label>
+          </div>
+          <div class="form-group" data-host-only style="display:none;">
+            <input type="text" id="address" class="form-input" placeholder=" ">
+            <label for="address" class="form-label">Business address</label>
+          </div>
+
           <div class="form-group" data-advertise-only>
             <select id="package" class="form-input form-select">
-              <option value="">No specific package, just exploring</option>
+              <option value="">Not sure yet — recommend one for me</option>
               <option value="local-presence">Local Presence — $249/mo</option>
               <option value="lloyd-network">Lloyd Network — $499/mo</option>
               <option value="category-authority">Category Authority — $799/mo</option>
@@ -85,21 +99,8 @@
             <input type="hidden" id="locations" value="">
           </div>
 
-          <div class="form-group" data-host-only style="display:none;">
-            <input type="text" id="venue" class="form-input" placeholder=" ">
-            <label for="venue" class="form-label">Type of business / venue</label>
-          </div>
-          <div class="form-group" data-host-only style="display:none;">
-            <input type="text" id="address" class="form-input" placeholder=" ">
-            <label for="address" class="form-label">Business address</label>
-          </div>
-
-          <div class="form-group">
-            <textarea id="message" class="form-textarea" placeholder=" " required></textarea>
-            <label for="message" class="form-label" data-message-label>Tell us what you're looking for</label>
-          </div>
           <button type="submit" class="btn btn-primary btn-lg btn-pulse" style="width:100%; justify-content:center;">
-            Send Message
+            Send My Idea
             <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"/></svg>
           </button>
           <div data-form-error class="form-error" style="display:none;"></div>
@@ -110,8 +111,8 @@
             <circle cx="26" cy="26" r="24"/>
             <polyline class="check-path" points="14 27 23 36 38 18"/>
           </svg>
-          <h3 class="mt-3">Message Sent!</h3>
-          <p class="mt-3">We got it. One of us will reach out within 48 hours. In the meantime, check out our <a href="pricing.html" style="color: var(--color-primary);">pricing</a>.</p>
+          <h3 class="mt-3">Got your idea!</h3>
+          <p class="mt-3">One of us will reach out within 48 hours with a plan. In the meantime, you can <a href="pricing.html" style="color: var(--color-primary);">browse pricing</a> if you want.</p>
         </div>
       </div>
 
@@ -206,6 +207,6 @@
 </footer>
 
 <script src="assets/screen-locations.js?v=3"></script>
-<script src="main.js?v=10"></script>
+<script src="main.js?v=11"></script>
 </body>
 </html>

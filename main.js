@@ -271,7 +271,7 @@
       if (messageLabel) {
         messageLabel.textContent = mode === 'host'
           ? 'Tell us about your space and customer foot traffic'
-          : 'Tell us what you’re looking for';
+          : "What's your idea?";
       }
     }
 
@@ -279,13 +279,13 @@
       btn.addEventListener('click', () => applyMode(btn.dataset.inquiry));
     });
 
-    // Read URL params: ?type=host|advertise and ?package=local-presence|lloyd-network|category-authority|city-takeover
+    // Read URL params: ?type=host|advertise and ?pkg= (or legacy ?package=)
     const params = new URLSearchParams(location.search);
     const typeParam = (params.get('type') || '').toLowerCase();
     const initialMode = typeParam === 'host' ? 'host' : 'advertise';
     applyMode(initialMode);
 
-    const pkgParam = (params.get('package') || '').toLowerCase();
+    const pkgParam = (params.get('pkg') || params.get('package') || '').toLowerCase();
     if (pkgParam && packageSelect) {
       const opt = packageSelect.querySelector(`option[value="${pkgParam}"]`);
       if (opt) packageSelect.value = pkgParam;
