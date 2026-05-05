@@ -19,7 +19,7 @@
 (function () {
   'use strict';
 
-  const GA_ID = 'G-XXXXXXXXXX'; // ← REPLACE THIS LINE WITH YOUR GA4 ID
+  const GA_ID = 'G-30T0H76EWV';
   const PLACEHOLDER = 'G-XXXXXXXXXX';
 
   // No-op while the placeholder is in place — site works without GA active.
